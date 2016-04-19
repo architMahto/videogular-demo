@@ -29,7 +29,10 @@
     "SHA-1": "^0.1.1",
     "bootstrap": "^3.3.6",
     "angular-slick": "^0.2.1",
-    "slick-carousel": "^1.5.9"
+    "slick-carousel": "^1.5.9",
+    "angular-carousel": "^1.0.1",
+    "hover": "Hover#^2.0.2",
+    "angular-svg-round-progressbar": "^0.4.2"
   },
   "resolutions": {
     "angular": "^1.5.4",

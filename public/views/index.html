@@ -5,17 +5,23 @@
     <meta charset="utf-8">
     <title>Mr. Bean Playlist Demo</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="/bower_components/Materialize/bin/materialize.css">
     <!-- Slick CSS -->
     <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css">
+    <!-- Slick Theme CSS -->
+    <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick-theme.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/bower_components/angular-carousel/dist/angular-carousel.css">
+    <!-- Hover CSS -->
+    <link rel="stylesheet" href="/bower_components/hover/css/hover.css">
     <!-- Styles CSS  -->
     <link rel="stylesheet" href="/stylesheets/styles.css">
 
     <!-- JQuery -->
     <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
-    <!-- Bootstrap JS -->
-    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Materialize JS -->
+    <script type="text/javascript" src="/bower_components/Materialize/bin/materialize.js"></script>
 
     <!-- Angular -->
     <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
@@ -31,10 +37,21 @@
     <script type="text/javascript" src="/bower_components/videogular-poster/vg-poster.js"></script>
     <!-- Videogular Buffering -->
     <script type="text/javascript" src="/bower_components/videogular-buffering/vg-buffering.js"></script>
+    <!-- Videogular Next Video -->
+    <script type="text/javascript" src="/javascripts/com/2fdevs/videogular/plugins/vg-next-video/vg-next-video.js"></script>
+    <!-- Videogular Next Video Service -->
+    <script type="text/javascript" src="/javascripts/com/2fdevs/videogular/plugins/vg-next-video/vg-next-video-service.js"></script>
+
     <!-- Slick Carousel -->
     <script type="text/javascript" src="/bower_components/slick-carousel/slick/slick.js"></script>
+    <!-- Carousel -->
+    <script type="text/javascript" src="/bower_components/angular-carousel/dist/angular-carousel.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-touch/angular-touch.min.js"></script>
     <!-- Angular Slick -->
     <script type="text/javascript" src="/bower_components/angular-slick/dist/slick.js"></script>
+
+    <!-- Angular SVG Round Progress Bar -->
+    <script type="text/javascript" src="/bower_components/angular-svg-round-progressbar/build/roundProgress.min.js"></script>
 </head>
 
 <body>
@@ -42,9 +59,8 @@
     <div ng-controller="videoController as videoCtrl">
 
         <div class="videogular-container">
-          <videogular vg-player-ready="videoCtrl.onPlayerReady($API)" vg-complete="videoCtrl.onCompleteVideo()" vg-theme="videoCtrl.config.theme">
-              <!-- <vg-media vg-src="videoCtrl.config.sources" vg-tracks="videoCtrl.config.tracks">
-              </vg-media> -->
+          <videogular vg-player-ready="videoCtrl.onPlayerReady($API)" vg-complete="videoCtrl.onComplete()" vg-theme="videoCtrl.config.theme"
+          vg-auto-play="true">
               <vg-media vg-src="videoCtrl.config.sources">
               </vg-media>
 
@@ -63,18 +79,31 @@
               </vg-controls>
 
               <vg-overlay-play></vg-overlay-play>
-              <!-- <vg-poster vg-url='videoCtrl.config.plugins.poster'></vg-poster> -->
+              <vg-poster vg-url='videoCtrl.config.plugins.poster'></vg-poster>
+              <vg-buffering></vg-buffering>
           </videogular>
         </div>
 
         <div class="container playlist">
-          <ul>
-            <li ng-repeat = "video in videoCtrl.videos">
-              <a ng-click="videoCtrl.setVideo($index)">
-                {{video.title}}
+
+          <br />
+
+          <slick infinite="true" slides-to-show="5" slides-to-scroll="5">
+
+            <div class="videoDiv" ng-repeat="video in videoCtrl.videos">
+
+              <a class="hvr-grow" ng-click="videoCtrl.setVideo($index)">
+                <img style="height: 175px; width: 225px;" ng-src="{{video.poster}}" />
               </a>
-            </li>
-          </ul>
+
+              <div class="info" style="width: 225px;">
+                <h5>{{video.title}}</h5>
+                <p>{{video.synopsis}}</p>
+              </div>
+            </div>
+
+          </slick>
+
         </div>
 
     </div>
