@@ -81,3 +81,7 @@ html, body {
         height: 50px;
     }
 }
+
+.slick-prev:before, .slick-next:before {
+  color: black;
+}

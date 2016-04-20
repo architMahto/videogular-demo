@@ -88,15 +88,15 @@
 
           <br />
 
-          <slick infinite="true" slides-to-show="5" slides-to-scroll="5">
+          <slick infinite="true" slides-to-show="3" slides-to-scroll="3" arrows="true">
 
-            <div class="videoDiv" ng-repeat="video in videoCtrl.videos">
+            <div class="videoDiv center-align" ng-repeat="video in videoCtrl.videos">
 
               <a class="hvr-grow" ng-click="videoCtrl.setVideo($index)">
                 <img style="height: 175px; width: 225px;" ng-src="{{video.poster}}" />
               </a>
 
-              <div class="info" style="width: 225px;">
+              <div class="info" style="width: 225px; margin: 0 auto">
                 <h5>{{video.title}}</h5>
                 <p>{{video.synopsis}}</p>
               </div>

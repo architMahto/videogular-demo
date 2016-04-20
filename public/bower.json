@@ -32,7 +32,8 @@
     "slick-carousel": "^1.5.9",
     "angular-carousel": "^1.0.1",
     "hover": "Hover#^2.0.2",
-    "angular-svg-round-progressbar": "^0.4.2"
+    "angular-svg-round-progressbar": "^0.4.2",
+    "Materialize": "materialize#^0.97.6"
   },
   "resolutions": {
     "angular": "^1.5.4",

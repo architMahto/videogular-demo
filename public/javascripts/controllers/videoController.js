@@ -12,6 +12,24 @@
     videoCtrl.API = null;
     videoCtrl.currentIndex = 0;
 
+    videoCtrl.breakpoints = [
+      {
+        breakpoint: 1430,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      }
+    ];
+
     videoCtrl.onPlayerReady = function (API) {
       videoCtrl.API = API;
     };
