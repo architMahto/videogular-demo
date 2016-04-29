@@ -14,7 +14,7 @@
 
     videoCtrl.breakpoints = [
       {
-        breakpoint: 1430,
+        breakpoint: 1605,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 4,
@@ -22,10 +22,24 @@
         }
       },
       {
-        breakpoint: 768,
+        breakpoint: 1300,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 795,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 516,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       }
     ];
